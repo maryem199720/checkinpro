@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -13,8 +12,48 @@
         android:layout_height="wrap_content"
         android:text="@string/bienvenue_sur_l_application"
         android:textSize="20sp"
-        android:layout_gravity="center"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
+    <EditText
+        android:id="@+id/employeeIdField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Employee ID"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/fetchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fetch Employee"
+        app:layout_constraintTop_toBottomOf="@+id/employeeIdField"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/employeeDetailsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Employee details will appear here"
+        app:layout_constraintTop_toBottomOf="@+id/fetchButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Employee"
+        app:layout_constraintTop_toBottomOf="@+id/employeeDetailsText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
