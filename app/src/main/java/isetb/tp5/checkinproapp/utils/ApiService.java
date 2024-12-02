@@ -7,6 +7,8 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.DELETE;
+import retrofit2.http.Path;
 
 public interface ApiService {
     @GET("Employee/profile/44") // Utilisation de l'ID fixe 44
@@ -20,4 +22,12 @@ public interface ApiService {
 
     @POST("Employee/login")
     Call<Employee> loginEmployee(@Body LoginRequest loginRequest);
-}
+
+    @GET("employees/{id}")
+        Call<Employee> getEmployeeById(@Path("id") Long id);
+
+    @DELETE("employees/{id}")
+        Call<Void> deleteEmployee(@Path("id") Long id);
+    }
+
+
